@@ -1,0 +1,16 @@
+﻿{% extends parent_template|default:"post/inter_base_eng.html" %}
+{% load staticfiles %}
+{% block title %}
+    項川 {{ post.title_eng }}
+{% endblock %}
+
+{% block subcontent1 %}
+    <h2>{{ post.title_eng }}</h2>
+    <p>Some Content</p>
+    <p>Number of Views: {{ post.views}}</p>
+{% endblock %}
+
+{% block subcontent2 %}
+    <img src="{% static 'post/pic/2016-09-01_1.png' %}"/>
+    <p>End</p>
+{% endblock %}

@@ -1,0 +1,4 @@
+﻿Django>=1.9
+django-toolbelt
+psycopg2
+whitenoise

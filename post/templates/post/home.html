@@ -1,0 +1,24 @@
+﻿{% extends parent_template|default:"base.html" %}
+{% block title %}
+    首頁
+{% endblock %}
+
+{% block content %}
+    {% if not prev_url %}
+        <div id="heading">
+            <h1><a href="{{ heading.get_absolute_url }}">{{ heading.title }}</a></h1>
+        </div>
+    {% endif %}
+    {% for article in page %}
+        <div class="article">
+            {{ article.title }}
+        </div>
+    {% endfor %}
+    {% if prev_url %}
+        <a href="{{ prev_url }}">上一頁</a>
+    {% endif %}
+        <p>第{{ page.number }}頁</p>
+    {% if next_url %}
+        <a href="{{ next_url }}">下一頁</a>
+    {% endif %}
+{% endblock %}

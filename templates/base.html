@@ -1,0 +1,64 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+                Blog
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--[if IE]><script
+            src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script><![endif]-->
+    </head>
+    
+    <body>
+        <header>
+            <nav class="main">
+                <ul>
+                    <li><a href="{% url 'homepage' %}">主頁</a></li>
+                    <li>熱門文章</li>
+                    <li>搜尋</li>
+                    <li>訂閱</li>
+                    <a id="translateLink">簡</a>
+                    <a href="{{eng}}">Eng</a>
+                </ul>
+            </nav>	
+            <nav class="social_media">
+                <ul>
+                    <li>F</li>
+                    <li>W</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+                default content
+            {% endblock %}
+        </main>
+        <aside>
+            <h4>熱門關鍵字</h3>
+        </aside>
+        <footer>
+            <ul>
+                <li>關於</li>
+                <li>免責聲明</li>
+                <li>聯絡</li>
+            </ul>
+        </footer>
+    <script type="text/javascript" src="{% static 'tw_cn.js' %}"></script>
+    <script type="text/javascript">
+        var defaultEncoding = 1;
+        var translateDelay = 0;
+        var cookieDomain = "http://127.0.0.1:8000";
+        var msgToTraditionalChinese = "繁";
+		var msgToSimplifiedChinese = "简";
+		var translateButtonId = "translateLink";
+		translateInitilization();
+	</Script>
+    </body>
+</html>

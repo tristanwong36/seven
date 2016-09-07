@@ -1,0 +1,24 @@
+﻿{% extends parent_template|default:"base_eng.html" %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    {% if not prev_url %}
+        <div id="heading">
+            <h1><a href="{{ heading.get_eng_url }}">{{ heading.title_eng }}</a></h1>
+        </div>
+    {% endif %}
+    {% for article in page %}
+        <div class="article">
+            {{ article.title_eng }}
+        </div>
+    {% endfor %}
+    {% if prev_url %}
+        <a href="{{ prev_url }}">Previous Page</a>
+    {% endif %}
+        <p>Page {{ page.number }}</p>
+    {% if next_url %}
+        <a href="{{ next_url }}">Next Page</a>
+    {% endif %}
+{% endblock %}

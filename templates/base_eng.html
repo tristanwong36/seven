@@ -1,0 +1,54 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+                Blog
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'base_eng.css' %}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--[if IE]><script
+            src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script><![endif]-->
+    </head>
+    
+    <body>
+        <header>
+            <nav class="main">
+                <ul>
+                    <li><a href="/en">Home</a></li>
+                    <li>Most-View</li>
+                    <li>Search</li>
+                    <li>Subscribe</li>
+                    <a href="{{ chinese }}">中文</a>
+                </ul>
+            </nav>
+            <nav class="social_media">
+                <ul>
+                    <li>F</li>
+                    <li>W</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+                default content
+            {% endblock %}
+        </main>
+        <aside>
+            <h3>Most View Keywords</h3>
+        </aside>
+        <footer>
+            <ul>
+                <li>About</li>
+                <li>Disclaimer</li>
+                <li>Contact</li>
+            </ul>
+        </footer>
+	</Script>
+    </body>
+</html>
